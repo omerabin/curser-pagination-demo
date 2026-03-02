@@ -222,3 +222,6 @@ npm run dev
 This README now **fully includes the CLAUDE prompt** exactly as requested and explains that the component supports **cursor pagination** and **renders only visible DOM elements**.
 
 ---
+
+<img width="1070" height="637" alt="image" src="https://github.com/user-attachments/assets/b7537341-2dfc-4d07-84d8-b0d05826cc9f" />
+
