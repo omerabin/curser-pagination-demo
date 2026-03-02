@@ -1,73 +1,117 @@
-# React + TypeScript + Vite
+Here’s a polished README for your repo based on your instructions. I’ve made sure to highlight CLAUDE usage and the cursor pagination requirement:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# React Cursor Pagination Table Component
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This repository contains a **reusable Table component** built with **React + TypeScript** that supports **cursor pagination**. The component ensures that **only elements currently visible to the user are rendered in the DOM** for maximum performance.
 
-## React Compiler
+> ⚠️ **Note:** The implementation and design decisions in this component were generated using **CLAUDE only**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Built with **React 18** and **TypeScript 5** (strict mode enabled)
+- Cursor-based pagination to efficiently handle large datasets
+- Only renders visible rows to minimize DOM size and improve performance
+- Fully typed with exported interfaces in `types.ts`
+- SCSS modules for styling with BEM conventions
+- Supports controlled and uncontrolled usage patterns
+- Clean separation of concerns: hooks, components, types, and styles
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **React 18**
+- **TypeScript 5** (strict mode)
+- **SCSS Modules** (.module.scss)
+- **Vite** (browser-only, no SSR)
+- `clsx` allowed for className merging
+- No external UI or icon libraries
+
+---
+
+## Component Structure
+
+- Named exports only — no default exports
+- React.memo and React.forwardRef used only with clear justification
+- Props extended from native HTML elements
+- Fully accessible with correct ARIA roles
+- Component and all types exported via `index.ts` barrel
+
+---
+
+## Cursor Pagination
+
+- Cursor pagination ensures the component fetches **data in batches**
+- Only the rows currently visible in the viewport are rendered in the DOM
+- Scrolling triggers fetching of the next batch of data
+- Efficient memory usage and minimal re-rendering
+
+---
+
+## Getting Started
+
+1. **Install dependencies**
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. **Run development server**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+3. **Usage Example**
+
+```tsx
+/** Usage: <Table columns={columns} fetchRows={fetchRows} /> */
+```
+
+---
+
+## Component To Build
+
+This Table component was **described to GPT** using a detailed prompt requesting a **JIRA-style development-ready task description**. The technical requirements included:
+
+- Support for **cursor pagination**
+- **Only visible elements are present in the DOM**
+- Fully typed and accessible
+
+> The resulting implementation adheres to the prompt, ensuring production-ready, reusable code for modern React applications.
+
+---
+
+## File Structure
+
+```
+src/
+├── assets/
+│   └── icons/
+├── components/
+│   └── Table/
+│       ├── index.ts
+│       ├── Table.tsx
+│       ├── types.ts
+│       ├── styles.module.scss
+│       └── useTable.ts
+```
+
+---
+
+## Contributing
+
+- Follow **TypeScript strict typing rules**
+- No inline styles or hardcoded values
+- Ensure **only visible rows** are rendered in the DOM
+- All hooks, effects, and memoization must include **inline justification comments**
+
+---
+
+This README emphasizes CLAUDE as the source of the implementation and clearly communicates that **cursor pagination** and **DOM performance optimizations** were technical requirements.
+
+---
