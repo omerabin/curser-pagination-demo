@@ -1,0 +1,74 @@
+// src/styles/_tokens.scss
+// Design tokens as CSS custom properties on :root.
+// Import this file with `@use` in components that need token values.
+
+:root {
+  // ── Color palette ──────────────────────────────────────────────────────
+  --color-surface: #ffffff;
+  --color-surface-raised: #f8f9fb;
+  --color-surface-hover: #f3f4f8;
+
+  --color-border: #e4e6ef;
+  --color-border-strong: #c7cad8;
+
+  --color-text-primary: #0f1117;
+  --color-text-secondary: #5a5f7a;
+  --color-text-tertiary: #8b91aa;
+
+  --color-accent: #4f5bff;
+  --color-accent-hover: #3b47e8;
+
+  --color-danger: #e53e3e;
+
+  --color-skeleton-base: #ececec;
+  --color-skeleton-highlight: #f8f8f8;
+
+  // ── Spacing ────────────────────────────────────────────────────────────
+  --space-2: 4px;
+  --space-3: 8px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+
+  // ── Typography ─────────────────────────────────────────────────────────
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+
+  // ── Radius ─────────────────────────────────────────────────────────────
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  // ── Shadow ─────────────────────────────────────────────────────────────
+  --shadow-sm: 0 1px 4px rgba(15, 17, 23, 0.06), 0 2px 8px rgba(15, 17, 23, 0.04);
+}
+
+// ── Dark mode ──────────────────────────────────────────────────────────────
+[data-theme='dark'] {
+  --color-surface: #13141a;
+  --color-surface-raised: #1a1c24;
+  --color-surface-hover: #21232e;
+
+  --color-border: #252733;
+  --color-border-strong: #353849;
+
+  --color-text-primary: #eef0f8;
+  --color-text-secondary: #8b91aa;
+  --color-text-tertiary: #555a72;
+
+  --color-accent: #6672ff;
+  --color-accent-hover: #7f8aff;
+
+  --color-danger: #fc6e6e;
+
+  --color-skeleton-base: #252733;
+  --color-skeleton-highlight: #2e3040;
+
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+}
